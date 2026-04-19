@@ -1,29 +1,32 @@
-//Menu Calculator
-
 #include <stdio.h>
 
-int main() {
-    int choice;
-    float a, b;
+int main () { 
+int choice; 
+float a, b; 
 
-    printf("1.Add 2.Subtract 3.Multiply 4.Divide\n");
-    scanf("%d", &choice);
+printf("Enter number 1: "); 
+scanf("%f", &a); 
+printf("Enter number 2: "); 
+scanf("%f", &b); 
 
-    printf("Enter two numbers: ");
-    scanf("%f %f", &a, &b);
+printf("Choose: 1. Add\n 2. Subtract\n 3. Multiplication\n 4. Division\n"); 
+scanf("%d", &choice);
 
-    switch(choice) {
-        case 1: printf("Result = %.2f", a + b); break;
-        case 2: printf("Result = %.2f", a - b); break;
-        case 3: printf("Result = %.2f", a * b); break;
-        case 4: 
-            if(b != 0)
-                printf("Result = %.2f", a / b);
-            else
-                printf("Division by zero error");
-            break;
-        default: printf("Invalid choice");
+switch (choice) { 
+    case 1: ("Result = %0.2f", a+b); 
+    case 2: ("Result = %.2f", a-b); 
+    case 3: ("Result = %.2f", a*b); 
+    case 4: 
+    if (b<0) 
+    {
+        printf("Division not possible"); 
     }
-
-    return 0;
+    else 
+    {
+        printf("Result = %.2f", a/b); 
+    }
+    break;
+    default: printf("Invalid choice"); 
+}
+return 0; 
 }
