@@ -1,22 +1,51 @@
-// String Menu
 #include <stdio.h>
 #include <string.h>
 
-int main(){
-    char a[100],b[100];
+int main() {
+    char s1[100], s2[100];
     int choice;
 
-    scanf("%s %s",&a,&b);
-    scanf("%d",&choice);
+    printf("1.Length 2.Copy 3.Concatenate 4.Compare 5.Exit\n");
 
-    switch(choice){
-        case 1: printf("%lu",strlen(a)); break;
-        case 2: strcpy(b,a); printf("%s",b); break;
-        case 3: strcat(a,b); printf("%s",a); break;
-        case 4:
-            if(strcmp(a,b)==0) printf("Equal");
-            else printf("Not Equal");
-            break;
+    while (1) {
+        printf("\nEnter choice: ");
+        scanf("%d", &choice);
+
+        if (choice == 5) break;
+
+        printf("Enter string: ");
+        scanf("%s", s1);
+
+        switch (choice) {
+            case 1:
+                printf("Length: %zu", strlen(s1));
+                break;
+
+            case 2:
+                strcpy(s2, s1);
+                printf("Copied String: %s", s2);
+                break;
+
+            case 3:
+                printf("Enter second string: ");
+                scanf("%s", s2);
+                strcat(s1, s2);
+                printf("Concatenated: %s", s1);
+                break;
+
+            case 4:
+                printf("Enter second string: ");
+                scanf("%s", s2);
+                if (strcmp(s1, s2) == 0)
+                    printf("Equal");
+                else
+                    printf("Not Equal");
+                break;
+
+            default:
+                printf("Invalid choice");
+        }
+        printf("\n");
     }
 
     return 0;
