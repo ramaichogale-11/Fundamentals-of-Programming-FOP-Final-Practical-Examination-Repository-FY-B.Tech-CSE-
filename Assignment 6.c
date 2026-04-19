@@ -19,17 +19,23 @@ int main() {
 
 #include <stdio.h>
 
-int fact(int n){
-    if(n==0 || n==1)
+// Function to calculate factorial
+int fact(int n) {
+    if (n == 1 || n == 0) {
         return 1;
-    return n * fact(n-1);
+    }
+    return n * fact(n - 1);
 }
 
-int main(){
+int main() {
     int n;
-    scanf("%d",&n);
+    
+    printf("Enter a num: ");
+    if (scanf("%d", &n) != 1) return 1; // Input n and check for success
 
-    printf("%d", fact(n));
+    // Call the function and print the result
+    printf("Factorial of %d is %d\n", n, fact(n));
 
     return 0;
 }
+
